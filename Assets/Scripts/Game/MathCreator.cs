@@ -8,7 +8,7 @@ public class MathCreator : MonoBehaviour {
     public Text number2Text;
     public Text scoreText;
 
-    public Button[] options = new Button[4];
+    public Button[] options = new Button[5];
 
     private int i_number1;
     private int i_number2;
@@ -40,7 +40,7 @@ public class MathCreator : MonoBehaviour {
             options[i].GetComponentInChildren<Text>().text = Random.Range(1, 100).ToString();
         }
 
-        switch (Random.Range(1, 4))  // Coloca a resposta correta em uma das opções
+        switch (Random.Range(1, 5))  // Coloca a resposta correta em uma das opções
         {
             case 1:
                 options[0].GetComponentInChildren<Text>().text = i_answer.ToString();
@@ -53,6 +53,9 @@ public class MathCreator : MonoBehaviour {
                 break;
             case 4:
                 options[3].GetComponentInChildren<Text>().text = i_answer.ToString();
+                break;
+            case 5:
+                options[4].GetComponentInChildren<Text>().text = i_answer.ToString();
                 break;
         }
     }
