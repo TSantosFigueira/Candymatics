@@ -4,14 +4,17 @@ using UnityEngine.UI;
 
 public class MathCreator : MonoBehaviour {
 
-    public Text number1;
-    public Text number2;
+    public Text number1Text;
+    public Text number2Text;
+    public Text scoreText;
 
     public Button[] options = new Button[4];
 
     private int i_number1;
     private int i_number2;
     private int i_answer;
+
+    private int score;
 
     // Use this for initialization
     void Start () {
@@ -29,8 +32,8 @@ public class MathCreator : MonoBehaviour {
         i_number2 = Random.Range(1, 10);
         i_answer = i_number1 * i_number2;
 
-        number1.text = i_number1.ToString(); // publiciza o primeiro operando
-        number2.text = i_number2.ToString(); // publiciza o segundo operando
+        number1Text.text = i_number1.ToString(); // publiciza o primeiro operando
+        number2Text.text = i_number2.ToString(); // publiciza o segundo operando
 
         for (int i = 0; i < options.Length; i++) // povoa as opções
         {
@@ -56,10 +59,18 @@ public class MathCreator : MonoBehaviour {
 
     public void optionPicked(Button btn)
     {
-        if (btn.GetComponentInChildren<Text>().text == i_answer.ToString())
-            Debug.Log("You got it");
-        else
-            Debug.Log("Not yet");
+        if(timer.time > 0)
+        {
+            if (btn.GetComponentInChildren<Text>().text == i_answer.ToString())
+            {
+                score++;
+                scoreText.text = score.ToString();
+                operateIt();
+            }
+                
+            else
+                Debug.Log("Not yet");
+        }
     }
 
 }
