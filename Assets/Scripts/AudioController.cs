@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioController : MonoBehaviour {
+
     private AudioSource source;
     private GameObject audioButton;
     public Sprite buttonOn, buttonOff;
@@ -12,7 +13,6 @@ public class AudioController : MonoBehaviour {
     {
         source = GetComponent<AudioSource>();
         audioButton = GameObject.FindGameObjectWithTag("SoundButton");
-        //audioButton = GetComponent<Button>();
 
         string music = PlayerPrefs.GetString("music", "on");
         source.loop = true;
