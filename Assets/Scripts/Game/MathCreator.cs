@@ -10,21 +10,34 @@ public class MathCreator : MonoBehaviour {
 
     public Button[] options = new Button[5];
 
+	public GameObject resultsPanel;
+
+	private int score;
     private int i_number1;
     private int i_number2;
     private int i_answer;
-
-    private int score;
+	private int highestScore;
 
     // Use this for initialization
     void Start () {
         StartCoroutine(sec());
         operateIt();
+		highestScore = PlayerPrefs.GetInt ("highScore", 0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
+		if (score > highestScore) {
+			highestScore = score;
+			PlayerPrefs.SetInt ("highScore", highestScore);
+		}
+
+		PlayerPrefs.SetInt ("score", score);
+
+		if (timer.time == 0) {
+			resultsPanel.SetActive (true);
+		}
 	}
 
     public void operateIt()
@@ -63,17 +76,15 @@ public class MathCreator : MonoBehaviour {
 
     public void optionPicked(Button btn)
     {
-        if(timer.time > 0)
+        if (timer.time > 0)
         {
             if (btn.GetComponentInChildren<Text>().text == i_answer.ToString())
             {
                 score++;
                 scoreText.text = score.ToString();
-                operateIt();
             }
                 
-            else
-                Debug.Log("Not yet");
+			operateIt();
         }
     }
 
