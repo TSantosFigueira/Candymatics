@@ -11,6 +11,9 @@ public class MathCreator : MonoBehaviour {
     public Button[] options = new Button[5];
 
 	public GameObject resultsPanel;
+	public Image character;
+
+	public Sprite[] sprites = new Sprite[6];
 
 	private int score;
     private int i_number1;
@@ -18,11 +21,18 @@ public class MathCreator : MonoBehaviour {
     private int i_answer;
 	private int highestScore;
 
+	private string gender;
+
     // Use this for initialization
     void Start () {
-        StartCoroutine(sec());
         operateIt();
 		highestScore = PlayerPrefs.GetInt ("highScore", 0);
+		gender = PlayerPrefs.GetString ("gender", "boy");
+
+		if(gender == "boy")
+			character.sprite = sprites [0];
+		else
+			character.sprite = sprites [3];
 	}
 	
 	// Update is called once per frame
@@ -78,19 +88,43 @@ public class MathCreator : MonoBehaviour {
     {
         if (timer.time > 0)
         {
-            if (btn.GetComponentInChildren<Text>().text == i_answer.ToString())
-            {
-                score++;
-                scoreText.text = score.ToString();
-            }
+			if (btn.GetComponentInChildren<Text> ().text == i_answer.ToString ()) {
+				score++;
+				scoreText.text = score.ToString ();
+				right ();
+			} else
+				wrong ();
                 
 			operateIt();
+			StartCoroutine (original ());
         }
     }
 
-    IEnumerator sec()
-    {
-        yield return new WaitForSeconds(1.5f);
-    }
+	IEnumerator original(){
+		yield return new WaitForSeconds (1);
+		if (gender == "boy") {			
+			character.sprite = sprites [0];
+		} else {
+			character.sprite = sprites [3];
+		}
+	}
 
+		
+	public void right()
+	{
+		if (gender == "boy") {			
+			character.sprite = sprites [1];
+		} else {
+			character.sprite = sprites [4];
+		}
+	}
+
+	public void wrong()
+	{
+		if (gender == "boy")
+			character.sprite = sprites [2];
+		else
+			character.sprite = sprites [5];
+	}
+		
 }
