@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 public class timer : MonoBehaviour {
 
-    public static float time = 30;
+    public static float time = 33;
     private Text timeText;
+    private bool canGo = false;
 
 	// Use this for initialization
 	void Start () {

@@ -18,6 +18,7 @@ public class MathCreator : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        StartCoroutine(sec());
         operateIt();
 	}
 	
@@ -74,6 +75,11 @@ public class MathCreator : MonoBehaviour {
             else
                 Debug.Log("Not yet");
         }
+    }
+
+    IEnumerator sec()
+    {
+        yield return new WaitForSeconds(1.5f);
     }
 
 }
