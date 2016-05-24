@@ -11,9 +11,9 @@ public class BackgroundMusicManager : MonoBehaviour {
 
     private GameObject audioButton;
     
-    void Awake()
+    void Start()
     {
-        music = GetComponent<AudioSource>();
+        //music = GetComponent<AudioSource>();
         audioButton = GameObject.FindGameObjectWithTag("SoundButton");
 
         string music_state = PlayerPrefs.GetString("music", "on");

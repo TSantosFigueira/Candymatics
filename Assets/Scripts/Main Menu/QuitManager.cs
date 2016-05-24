@@ -3,12 +3,11 @@ using System.Collections;
 
 public class QuitManager : MonoBehaviour {
 
-    private GameObject quitPanel;
+    public GameObject quitPanel;
     private Animator quitAnimator;
 
     void Start()
     {
-        quitPanel = GameObject.FindGameObjectWithTag("QuitPanel");
         quitAnimator = quitPanel.GetComponent<Animator>();
     }
 
