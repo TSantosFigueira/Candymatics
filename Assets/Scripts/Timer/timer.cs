@@ -4,11 +4,12 @@ using UnityEngine.UI;
 
 public class timer : MonoBehaviour {
 
-    public static float time = 33f;
+    public static float time;
     private Text timeText;
 
 	// Use this for initialization
 	void Start () {
+        time = 33f;
         timeText = GetComponent<Text>();
 	}
 	
