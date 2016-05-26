@@ -48,7 +48,7 @@ public class MathCreator : MonoBehaviour {
 		if (timer.time == 0) {
 			resultsPanel.SetActive (true);
 		}
-	}
+    }
 
     public void operateIt()
     {
@@ -125,6 +125,5 @@ public class MathCreator : MonoBehaviour {
 			character.sprite = sprites [2];
 		else
 			character.sprite = sprites [5];
-	}
-		
+	}	
 }

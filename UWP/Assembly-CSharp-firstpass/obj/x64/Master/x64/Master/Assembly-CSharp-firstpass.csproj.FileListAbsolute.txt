@@ -1,0 +1,17 @@
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\bin\x64\Master\Assembly-CSharp-firstpass.dll
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\bin\x64\Master\Assembly-CSharp-firstpass.pdb
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\bin\x64\Master\Assembly-CSharp-firstpass.pri
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\obj\x64\Master\x64\Master\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\obj\x64\Master\x64\Master\Assembly-CSharp-firstpass.dll
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\obj\x64\Master\x64\Master\Assembly-CSharp-firstpass.pdb
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\obj\x64\Master\x64\Master\priconfig.xml
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\obj\x64\Master\x64\Master\priconfig.xml.intermediate
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\obj\x64\Master\x64\Master\layout.resfiles
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\obj\x64\Master\x64\Master\layout.resfiles.intermediate
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\obj\x64\Master\x64\Master\resources.resfiles
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\obj\x64\Master\x64\Master\resources.resfiles.intermediate
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\obj\x64\Master\x64\Master\pri.resfiles
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\obj\x64\Master\x64\Master\pri.resfiles.intermediate
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\obj\x64\Master\x64\Master\qualifiers.txt
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\obj\x64\Master\x64\Master\qualifiers.txt.intermediate
+C:\Users\Thiago\Documents\candymatics\UWP\Assembly-CSharp-firstpass\obj\x64\Master\x64\Master\MultipleQualifiersPerDimensionFound.txt
