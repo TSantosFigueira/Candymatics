@@ -9,7 +9,7 @@ public class timer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        time = 33f;
+        time = 63f;
         timeText = GetComponent<Text>();
 	}
 	

@@ -8,7 +8,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
 
-        Screen.fullScreen = !Screen.fullScreen;
+        //Screen.fullScreen = !Screen.fullScreen;
+        //Screen.SetResolution(1280, 720, true);
 /*#if NETFX_CORE && WINDOWS_UWP
             //Dispatch from Unity App thread to Windows UI Thread
             UnityEngine.WSA.Application.InvokeOnUIThread(() =>
