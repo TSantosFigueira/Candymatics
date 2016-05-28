@@ -3,14 +3,15 @@ using System.Collections;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
-public class BackgroundMusicManager : MonoBehaviour {
+public class BackgroundMusicManager : MonoBehaviour
+{
 
     public AudioSource music;
     public static GameObject musicManager;
     public Sprite buttonOn, buttonOff;
 
     private GameObject audioButton;
-    
+
     void Start()
     {
         //music = GetComponent<AudioSource>();
@@ -19,25 +20,22 @@ public class BackgroundMusicManager : MonoBehaviour {
         string music_state = PlayerPrefs.GetString("music", "on");
         music.loop = true;
 
-        if (musicManager && music_state == "on")
+        if (GameObject.FindGameObjectsWithTag("DontDestroy").Length > 1)
         {
-            Destroy(gameObject);
-            return;
+            Destroy(GameObject.FindGameObjectsWithTag("DontDestroy")[0]);
+        }
+
+        if (music_state == "on")
+        {
+            music.Play();
+            audioButton.GetComponent<Image>().sprite = buttonOn;
+            musicManager = gameObject;
         }
         else
         {
-            if(music_state == "on")
-            {
-                music.Play();
-                audioButton.GetComponent<Image>().sprite = buttonOn;
-                musicManager = gameObject;
-            }
-            else
-            {
-                music.Play();
-                music.Pause();
-                audioButton.GetComponent<Image>().sprite = buttonOff;
-            }
+            music.Play();
+            music.Pause();
+            audioButton.GetComponent<Image>().sprite = buttonOff;
         }
     }
 
