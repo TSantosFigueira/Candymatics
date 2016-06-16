@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class MathCreator : MonoBehaviour {
 
@@ -20,12 +21,15 @@ public class MathCreator : MonoBehaviour {
     private int i_number2;
     private int i_answer;
 	private int highestScore;
+    private int pickedNumber;
 
-	private string gender;
+    private List<int> usedValues = new List<int>();
+
+    private string gender;
 
     // Use this for initialization
     void Start () {
-        operateIt();
+
 		highestScore = PlayerPrefs.GetInt ("highScore", 0);
 		gender = PlayerPrefs.GetString ("gender", "boy");
 
@@ -33,6 +37,9 @@ public class MathCreator : MonoBehaviour {
 			character.sprite = sprites [0];
 		else
 			character.sprite = sprites [3];
+
+        pickedNumber = PlayerPrefs.GetInt("pickedNumber", 0);
+        operateIt();
 	}
 	
 	// Update is called once per frame
@@ -52,8 +59,12 @@ public class MathCreator : MonoBehaviour {
 
     public void operateIt()
     {
-        i_number1 = Random.Range(1, 10);
-        i_number2 = Random.Range(1, 10);
+        if (pickedNumber == 0)
+            i_number1 = Random.Range(1, 10);
+        else
+            i_number1 = pickedNumber;
+
+        i_number2 = UniqueRandomInt(1, 10);
         i_answer = i_number1 * i_number2;
 
         number1Text.text = i_number1.ToString(); // publiciza o primeiro operando
@@ -126,4 +137,18 @@ public class MathCreator : MonoBehaviour {
 		else
 			character.sprite = sprites [5];
 	}	
+
+    public int UniqueRandomInt(int min, int max)
+    {
+        int val = Random.Range(min, max);
+        while (usedValues.Contains(val))
+        {
+            val = Random.Range(min, max);
+            if(usedValues.Count >= 9)
+                break;
+        }
+        usedValues.Add(val);
+        return val;
+    }
+
 }

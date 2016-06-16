@@ -13,7 +13,7 @@ public class QuitManager : MonoBehaviour {
 
     public void DisablePauseAnimation(Animator anim)
     {
-        anim.SetBool("IsDisplayed", false);
+        anim.SetBool("IsDisplayed", false); 
     }
 
     public void EnablePauseAnimation(Animator anim)
